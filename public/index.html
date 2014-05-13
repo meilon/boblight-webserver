@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html> 
+<html manifest="/cache.manifest">
+<head>
+	<title>Boblight Webclient</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="client.css" />
+	<script type="text/javascript" src="/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/jquery.mobile-1.4.2.min.js"></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/client.js"></script>
+</head>
+
+<body><form>
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Boblight Webclient</h1>
+		<!--<a href="#" data-icon="recycle" class="ui-btn-right ui-state-disabled" name="reconnect" id="reconnect">Reconnect</a>-->
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>
+			<label for="status">Licht:</label>
+			<select name="status" id="status" data-role="slider">
+				<option value="off">Aus</option>
+				<option value="on">Ein</option>
+			</select>
+			
+			<label for="red">Rot:</label>
+			<input type="range" name="red" id="red" value="0" min="0" max="255">
+			
+			<label for="green">Gr&uuml;n:</label>
+			<input type="range" name="green" id="green" value="0" min="0" max="255">
+			
+			<label for="blue">Blau:</label>
+			<input type="range" name="blue" id="blue" value="0" min="0" max="255">
+			
+			<div class="ui-field-contain">
+				<label for="presets">Preset:</label>
+				<select name="presets" id="presets">
+				</select>
+			</div>
+			
+			<label for="sockstat">Verbindungsstatus:</label>
+			<span name="sockstat" id="sockstat">unknown</span>
+		</p>
+	</div><!-- /content -->
+</div><!-- /page -->
+<form></body>
+</html>
