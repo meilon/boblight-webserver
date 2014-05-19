@@ -55,12 +55,12 @@ io.sockets.on('connection', function (socket) {
 		io.sockets.emit('currData', { status: status, red: red, green: green, blue: blue, preset: preset });
 		//console.log('status changed to: ' + data);
 		if (status == "on") {			
-			libboblight.boblight_setpriority(ptr, 1);
+			libboblight.boblight_setpriority(ptr, 50);
 			updateColor();
 		} else {
 			libboblight.boblight_addpixel(ptr, -1, rgbBlack);
 			libboblight.boblight_sendrgb(ptr, 1, 0);
-			libboblight.boblight_setpriority(ptr, 200);
+			libboblight.boblight_setpriority(ptr, 255);
 		}
 	});
 	socket.on('red', function (data) {
